@@ -16,6 +16,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      cursor: pointer; /* untuk indikasi klik layar */
     }
 
     h1 {
@@ -67,24 +68,36 @@
       position: absolute;
       bottom: 20px;
     }
+
+    #instruction {
+      font-size: 1em;
+      margin-bottom: 20px;
+      color: #ffeaea;
+    }
   </style>
 </head>
 <body>
   <h1>💖 Untuk Kamu, Cintaku 💖</h1>
   <p>Terima kasih sudah selalu ada di sisiku. Aku akan mencintaimu selamanya 😘</p>
 
+  <p id="instruction">Klik layar ini sekali untuk memulai musik romantis 💖</p>
+
   <!-- Tombol I Love You -->
   <button id="loveBtn">I Love You ❤️</button>
 
   <!-- Musik Romantis -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  <audio id="musik" loop>
+    <source src="https://cdn.jsdelivr.net/gh/haidirhk/audio/penjaga_hati.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
   </audio>
 
-  <footer>❤️ Selamanya Milikmu ❤️</footer>
+  <footer>❤️ pembuat #Hedyr ❤️</footer>
 
   <script>
+    const musik = document.getElementById("musik");
+    const instruction = document.getElementById("instruction");
+    let musikDimulai = false;
+
     // Hati jatuh otomatis
     function createHeart() {
       const heart = document.createElement("div");
@@ -97,21 +110,34 @@
     }
     setInterval(createHeart, 300);
 
-    // Tombol "I Love You" bikin hati tambahan + kata-kata romantis
-    const loveBtn = document.getElementById("loveBtn");
+    // Kata romantis untuk tombol
     const kataRomantis = [
       "Aku mencintaimu lebih dari kata-kata bisa ungkapkan 💖",
-      "Aku + Kamu = Selamanya ❤️",
+      "Haidir + Hilda = Selamanya ❤️",
       "Kamu adalah bahagiaku setiap hari 😘",
       "Setiap detik bersamamu terasa indah ✨",
       "Aku bersyukur memilikimu di sisiku 💞"
     ];
 
+    const loveBtn = document.getElementById("loveBtn");
     loveBtn.addEventListener("click", () => {
       for (let i=0; i<30; i++) createHeart();
       const pesan = kataRomantis[Math.floor(Math.random()*kataRomantis.length)];
       alert(pesan);
+      if (!musikDimulai) {
+        musik.play();
+        musikDimulai = true;
+      }
     });
+
+    // Klik layar untuk mulai musik otomatis
+    document.body.addEventListener("click", () => {
+      if (!musikDimulai) {
+        musik.play();
+        musikDimulai = true;
+        instruction.style.display = "none"; // hilangkan instruksi setelah klik
+      }
+    }, { once: true }); // hanya sekali
   </script>
 </body>
 </html>
