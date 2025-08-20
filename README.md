@@ -91,7 +91,7 @@
     Browser kamu tidak mendukung audio.
   </audio>
 
-  <footer>❤️ pembuat #Hedyr ❤️</footer>
+  <footer>❤️ Selamanya Milikmu ❤️</footer>
 
   <script>
     const musik = document.getElementById("musik");
@@ -113,7 +113,7 @@
     // Kata romantis untuk tombol
     const kataRomantis = [
       "Aku mencintaimu lebih dari kata-kata bisa ungkapkan 💖",
-      "Haidir + Hilda = Selamanya ❤️",
+      "Aku + Kamu = Selamanya ❤️",
       "Kamu adalah bahagiaku setiap hari 😘",
       "Setiap detik bersamamu terasa indah ✨",
       "Aku bersyukur memilikimu di sisiku 💞"
