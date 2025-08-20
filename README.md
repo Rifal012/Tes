@@ -11,49 +11,22 @@
       background: linear-gradient(to right, #ffdde1, #ee9ca7);
       overflow: hidden;
       color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     h1 {
-      margin-top: 30px;
       font-size: 3em;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 1.3em;
-      margin-bottom: 20px;
-    }
-
-    /* Slideshow Foto */
-    .slideshow {
-      max-width: 400px;
-      margin: 30px auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    .slides {
-      display: flex;
-      width: 100%;
-      animation: slide 25s infinite;
-    }
-
-    .slides img {
-      width: 100%;
-      border-radius: 20px;
-    }
-
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      20% { transform: translateX(0%); }
-      25% { transform: translateX(-100%); }
-      45% { transform: translateX(-100%); }
-      50% { transform: translateX(-200%); }
-      70% { transform: translateX(-200%); }
-      75% { transform: translateX(-300%); }
-      95% { transform: translateX(-300%); }
-      100% { transform: translateX(-400%); }
+      margin-bottom: 30px;
     }
 
     /* Hati Jatuh */
@@ -80,7 +53,6 @@
       border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      margin: 20px 0;
       transition: transform 0.2s;
     }
 
@@ -92,23 +64,14 @@
       margin-top: 40px;
       font-size: 1.1em;
       color: #fff5f7;
+      position: absolute;
+      bottom: 20px;
     }
   </style>
 </head>
 <body>
   <h1>💖 Untuk Kamu, Cintaku 💖</h1>
   <p>Terima kasih sudah selalu ada di sisiku. Aku akan mencintaimu selamanya 😘</p>
-
-  <!-- Slideshow Foto -->
-  <div class="slideshow">
-    <div class="slides">
-      <img src="https://picsum.photos/400/300?random=1" alt="Foto Kita 1">
-      <img src="https://picsum.photos/400/300?random=2" alt="Foto Kita 2">
-      <img src="https://picsum.photos/400/300?random=3" alt="Foto Kita 3">
-      <img src="https://picsum.photos/400/300?random=4" alt="Foto Kita 4">
-      <img src="https://picsum.photos/400/300?random=5" alt="Foto Kita 5">
-    </div>
-  </div>
 
   <!-- Tombol I Love You -->
   <button id="loveBtn">I Love You ❤️</button>
