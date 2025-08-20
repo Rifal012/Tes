@@ -24,14 +24,6 @@
       margin-bottom: 20px;
     }
 
-    #countdown {
-      font-size: 2em;
-      margin: 20px 0;
-      font-weight: bold;
-      color: #ffeb3b;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-
     /* Slideshow Foto */
     .slideshow {
       max-width: 400px;
@@ -107,9 +99,6 @@
   <h1>💖 Untuk Kamu, Cintaku 💖</h1>
   <p>Terima kasih sudah selalu ada di sisiku. Aku akan mencintaimu selamanya 😘</p>
 
-  <!-- Countdown -->
-  <div id="countdown">Loading...</div>
-
   <!-- Slideshow Foto -->
   <div class="slideshow">
     <div class="slides">
@@ -144,28 +133,6 @@
       setTimeout(() => heart.remove(), 5000);
     }
     setInterval(createHeart, 300);
-
-    // Countdown ke tanggal jadian (ubah sesuai tanggalmu)
-    const countDownDate = new Date("2025-09-25T00:00:00").getTime();
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "Hari Spesial Kita Telah Tiba! ❤️";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000*60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = 
-        `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik Menuju Hari Spesial Kita 💖`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
 
     // Tombol "I Love You" bikin hati tambahan + kata-kata romantis
     const loveBtn = document.getElementById("loveBtn");
